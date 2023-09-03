@@ -1,0 +1,16 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+<h2>Buscar Productos</h2>
+
+{% endblock titulo %}
+
+{% block contenido %}
+<h2>Buscar Productos</h2>
+    <form action="/buscar2" method="GET">
+        {%csrf_token%}
+        <p>Patron a buscar en productos: <input type="text" name="buscar" id="numero"></p>
+        <input type="submit" value="Buscar">
+    </form>
+    {% endblock contenido %}

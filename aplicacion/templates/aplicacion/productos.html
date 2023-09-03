@@ -1,0 +1,52 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+<div class="text-center">
+    <div class="fs-4 mb-4 fst-italic" style="color: aliceblue">Productos</div>
+<a href="{% url 'agregar_producto' %}" class="btn btn-primary">Agregar Producto</a>
+<a href="{% url 'buscar_producto' %}" class="btn btn-primary">Buscar Producto</a>
+
+{% endblock titulo %}
+
+{% block contenido %}
+
+   
+ 
+        <div class="fs-2 mb-1 fst-italic font-weight-bolder" >{{titulo}}</div>
+    {% if mensaje %}
+    <div class="alert alert-info">{{ mensaje }}</div>
+    {% endif %}
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Nombre de producto</th>
+            <th>numero</th>
+            <th>Stock</th>
+            <th>Acciones</th>
+        </tr>
+    {% for c in productos %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td>{{ c.nombre }}</td>
+            <td>{{ c.numero }}</td>
+            <td>{{ c.stock }}</td>
+            <td>
+                <a
+                href="{% url 'update_producto' c.id %}"
+                class="btn btn-primary"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+              </a>
+              <a
+                href="{% url 'delete_producto' c.id %}"
+                class="btn btn-danger"
+                style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+                ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+              </a>
+            </td>
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock contenido %}

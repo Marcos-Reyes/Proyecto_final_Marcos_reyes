@@ -1,0 +1,23 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+<h2>Agregar un Producto</h2>
+
+{% endblock titulo %}
+
+{% block contenido %}
+<h2>Agregar un Producto</h2>
+{% if mensaje %}
+<div class="alert alert-info">{{ mensaje }}</div>
+{% endif %}
+    <form action="" method="post">
+        
+        <table>
+            {%csrf_token%}
+            {{form.as_table}}
+        </table>
+   
+        <input class="btn btn-primary" type="submit" value="Enviar">
+    </form>
+    {% endblock contenido %}

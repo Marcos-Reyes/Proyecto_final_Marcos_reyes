@@ -1,0 +1,16 @@
+{% extends 'aplicacion/base.html' %}
+{% load static %}
+
+{% block titulo %}
+<h2>Buscar proveedor</h2>
+
+{% endblock titulo %}
+
+{% block contenido %}
+<h2>Buscar proveedor</h2>
+    <form action="/buscar4" method="GET">
+        {%csrf_token%}
+        <p>Ingrese algun dato del proveedor a buscar: <input type="text" name="buscar" id="numero"></p>
+        <input type="submit" value="Buscar">
+    </form>
+    {% endblock contenido %}
