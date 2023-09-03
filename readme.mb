@@ -1,10 +1,15 @@
 #Esta aplicacion se realizo para poder gestionar una distribuidora.
 
-#se pueden agregar productos, clientes, y proveedores
+#se pueden agregar, modificar y elimar productos, clientes, y proveedores
 
 #los productos cuentan con nombre y numero de referencia
 
 #Para ver los clientes esta la seccion clientes que muestra todo el listado y tambien se puede buscar por nombre o algun dato extra
+
+#para poder acceder si o si tiene que estar registrado y logueado en la pagina
+
+#el usuario puede modificar su perfil una vez este dentro
+
 
 #para ejecutar la aplicacion al descargarla se debe abrir cmd desde la carpeta de la app
 con el comando PYTHON MANAGE.PY RUNSERVER y copiando la direccion ip que nos da.
